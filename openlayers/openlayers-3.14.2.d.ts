@@ -520,6 +520,65 @@ declare namespace olx {
                 //TODO: Replace with olx.control.ZoomOptions
             zoomOptions?: any;
         }
+        
+        interface ZoomToExtentOptions {
+            /**
+             * Class name. Default is ol-zoom-extent.
+             */
+            className?:	string;
+
+            /**
+             * Target.
+             */
+            target?: Element | string;	
+
+            /**
+             * Text label to use for the button. Default is E. Instead of text, also a Node (e.g. a span element) can be used.
+             */
+            label?:	string | Node;	
+
+            /**
+             * Text label to use for the button tip. Default is Zoom to extent
+             */
+            tipLabel?: string;	
+
+            /**
+             * The extent to zoom to. If undefined the validity extent of the view projection is used.
+             */
+            extent?: ol.Extent;
+        }
+
+        interface MousePositionOptions {
+            /**
+             * CSS class name. Default is ol-mouse-position.
+             */
+            className?: string;
+
+            /**
+             * Coordinate format.
+             */
+            coordinateFormat?: ol.CoordinateFormatType;
+
+            /**
+             * Projection.
+             */
+            projection?: ol.proj.ProjectionLike | string;	
+
+            /**
+             * Function called when the control should be re-rendered. This is called in a requestAnimationFrame callback.
+             */
+            render?: () => void;
+
+            /**
+             * Target.
+             */
+            target?: Element | string;
+
+            /**
+             * Markup for undefined coordinates. Default is `` (empty string).
+             */
+            undefinedHTML?:	string;	
+        }        
     }
 
     namespace interaction {
@@ -2414,6 +2473,7 @@ declare namespace ol {
         }
 
         class MousePosition {
+            constructor(options?: olx.control.MousePositionOptions);
         }
 
         class OverviewMap {
@@ -2432,6 +2492,7 @@ declare namespace ol {
         }
 
         class ZoomToExtent {
+            constructor(opt_options?: olx.control.ZoomToExtentOptions);
         }
     }
 
