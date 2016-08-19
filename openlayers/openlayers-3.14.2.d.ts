@@ -2462,36 +2462,51 @@ declare namespace ol {
          */
         interface ScaleLineUnits extends String { }
 
-        class Attribution {
+        class Attribution extends ol.control.Control {
         }
 
-        class Control {
+        class Control extends ol.Object {
             constructor(options: olx.control.ControlOptions);
+
+            /**
+             * Get the map associated with this control.
+             */
+            getMap() : ol.Map;
+
+            /**
+             * Remove the control from its current map and attach it to the new map. Subclasses may set up event handlers to get notified about changes to the map here.
+             */
+            setMap(map: ol.Map);
+
+            /**
+             * This function is used to set a target element for the control. It has no effect if it is called after the control has been added to the map (i.e. after setMap is called on the control). If no target is set in the options passed to the control constructor and if setTarget is not called then the control is added to the map's overlay container.
+             */
+            setTarget(target: Element | string);
         }
 
-        class FullScreen {
+        class FullScreen extends ol.control.Control{
         }
 
         class MousePosition {
             constructor(options?: olx.control.MousePositionOptions);
         }
 
-        class OverviewMap {
+        class OverviewMap extends ol.control.Control {
         }
 
-        class Rotate {
+        class Rotate extends ol.control.Control {
         }
 
-        class ScaleLine {
+        class ScaleLine extends ol.control.Control {
         }
 
-        class Zoom {
+        class Zoom extends ol.control.Control {
         }
 
-        class ZoomSlider {
+        class ZoomSlider extends ol.control.Control {
         }
 
-        class ZoomToExtent {
+        class ZoomToExtent extends ol.control.Control {
             constructor(opt_options?: olx.control.ZoomToExtentOptions);
         }
     }
