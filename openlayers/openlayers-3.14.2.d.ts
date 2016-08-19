@@ -2462,7 +2462,9 @@ declare namespace ol {
          */
         interface ScaleLineUnits extends String { }
 
+        // TODO: replace any with olx.control.*Options
         class Attribution extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
         class Control extends ol.Object {
@@ -2484,26 +2486,38 @@ declare namespace ol {
             setTarget(target: Element | string);
         }
 
+        // TODO: replace any with olx.control.*Options
         class FullScreen extends ol.control.Control{
+            constructor(opt_options?: any);
         }
 
-        class MousePosition {
+        class MousePosition extends ol.control.Control {
             constructor(options?: olx.control.MousePositionOptions);
         }
 
+        // TODO: replace any with olx.control.*Options
         class OverviewMap extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
+        // TODO: replace any with olx.control.*Options
         class Rotate extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
+        // TODO: replace any with olx.control.*Options
         class ScaleLine extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
+        // TODO: replace any with olx.control.*Options
         class Zoom extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
+        // TODO: replace any with olx.control.*Options
         class ZoomSlider extends ol.control.Control {
+            constructor(opt_options?: any);
         }
 
         class ZoomToExtent extends ol.control.Control {
